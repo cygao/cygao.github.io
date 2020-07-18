@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+        function onSubmit(token) {
+          document.getElementById("demo-form").submit();
+        }
+    </script>
+
+    <title>Data survey form</title>
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/form.html">Cameron Gao Individual Assignment</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item ">
+              <a class="nav-link" href="form.html">Form</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="results.html">Verification</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <br>
+
+    <div class="container">
+        <div class="col-lg-6">
+                <h2>CSC 642 Summer 2020 Individual Assignment Cameron Gao</h2>
+                <h3>Data survey form</h3>
+
+            <!-- Form -->
+            <form>
+                <!-- Name: max 40 -->
+                <div class="form-group">
+                    <label for="Name"> Name</label>
+                    <input type="text" maxLength="40" class="form-control" id="inputName" placeholder="First and Last" required>
+                </div>
+
+                <!-- Address -->
+                <div class="form-group">
+                    <label for="inputAddress">Street</label>
+                    <input type="text" maxLength="40" class="form-control" id="inputAddress" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputCity">City</label>
+                        <input type="text" maxLength="40" class="form-control" id="inputCity" required>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputState">State</label>
+                        <input type="text" maxLength="40" class="form-control" id="inputState" required>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputZip">Zip</label>
+                        <input type="number" min="10000" max="99999" class="form-control" id="inputZip" required>
+                    </div>
+                </div>
+
+                <!-- Birthday -->
+                <div class="form-row">
+                    <div class="form-group col-sm-6">
+                        <label for="Name">Birthday</label>
+                        <input type="date" class="form-control" id="birthDay" required>
+                    </div>
+                </div>
+
+                <!-- Education Level (Dropdown) -->
+                <div class="form-group">
+                    <label for="education">Highest Education</label>
+                    <select id="education" class="form-control">
+                        <option selected>Select One</option>
+                        <option>High School</option>
+                        <option>College</option>
+                        <option>Graduate</option>
+                        <option>Phd</option>
+                    </select>
+                </div>
+
+                <!-- Height  -->
+                <div class="form-row">
+                    <div class="form-group col-sm-3">
+                      <label for="inputEmail4">Height</label>
+                      <input type="number" min="0" max="9" class="form-control" id="inputHeightFeet" placeholder="Feet">
+                    </div>
+                    <div class="form-group col-sm-3">
+                      <label for="inputPassword4">&#8192;</label>
+                      <input type="number" min="0" max="12" class="form-control" id="inputHeightInches" placeholder="Inch">
+                    </div>
+                </div>
+
+                <!-- Phone: 7 digits -->
+                <div class="form-row">
+                    <div class="form-group col-sm-5">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" class="form-control" id="inputPhoneNumber" pattern="[0-9]{3}-[0-9]{4}" placeholder="123-4567" required>
+                    </div>
+                </div>
+
+                <!-- Email + Confirm -->
+                <div class="form-group">
+                    <label for="InputEmail1">Email address</label>
+                    <input type="email" maxLength="40" class="form-control" id="InputEmail1" aria-describedby="emailHelp" required>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="InputEmail2">Confirm Email address</label>
+                    <input type="emailHelp" maxLength="40" class="form-control" id="InputEmail2" required>
+                </div>
+
+                <!-- Checkbox -->
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="check" required>
+                    <label class="form-check-label" for="check">I agree to Terms</label>
+                </div>
+
+                <!-- Captcha -->
+
+                <!-- Submit -->
+                <button 
+                    type="submit"
+                    href="/form.html"
+                    class="g-recaptcha btn btn-primary btn-block" 
+                    data-sitekey="6LcMxrIZAAAAAJe3tkr4xmFqwlqdNx7r2pMvHvYj" 
+                    data-callback='onSubmit' 
+                    data-action='submit'>Submit
+                </button>
+            </form>
+            <br>
+        </div>  
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
